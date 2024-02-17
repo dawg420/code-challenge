@@ -1,26 +1,100 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Fancy Form</title>
-
-  <!-- You may add more stuff here -->
-  <link href="style.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fancy Form</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-  <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
-  <form onsubmit="return !1">
-    <h5>Swap</h5>
-    <label for="input-amount">Amount to send</label>
-    <input id="input-amount" />
-
-    <label for="output-amount">Amount to receive</label>
-    <input id="output-amount" />
-
-    <button>CONFIRM SWAP</button>
-  </form>
-  <script src="script.js"></script>
+    <div class="container">
+        <form id="currencySwapForm">
+            <h2>Currency Swap</h2>
+            <div class="form-group">
+              <label for="amount">You pay:</label>
+              <input type="number" id="amount" name="amount" min="0" placeholder="Enter amount">
+            </div>
+            <div class="form-group">
+                <label for="fromCurrency">From:</label>
+                <select id="fromCurrency" name="fromCurrency">
+                  <option value="ATOM">ATOM</option>
+                  <option value="BLUR">BLUR</option>
+                  <option value="BUSD">BUSD</option>
+                  <option value="ETH">ETH</option>
+                  <option value="EVMOS">EVMOS</option>
+                  <option value="GMX">GMX</option>
+                  <option value="IBCX">IBCX</option>
+                  <option value="IRIS">IRIS</option>
+                  <option value="KUJI">KUJI</option>
+                  <option value="LSI">LSI</option>
+                  <option value="LUNA">LUNA</option>
+                  <option value="OKB">OKB</option>
+                  <option value="OKT">OKT</option>
+                  <option value="OSMO">OSMO</option>
+                  <option value="RATOM">RATOM</option>
+                  <option value="STATOM">STATOM</option>
+                  <option value="STEVMOS">STEVMOS</option>
+                  <option value="STLUNA">STLUNA</option>
+                  <option value="STOSMO">STOSMO</option>
+                  <option value="STRD">STRD</option>
+                  <option value="SWTH">SWTH</option>
+                  <option value="USC">USC</option>
+                  <option value="USD">USD</option>
+                  <option value="USDC">USDC</option>
+                  <option value="WBTC">WBTC</option>
+                  <option value="YieldUSD">YieldUSD</option>
+                  <option value="ZIL">ZIL</option>
+                  <option value="ampLUNA">ampLUNA</option>
+                  <option value="axlUSDC">axlUSDC</option>
+                  <option value="bNEO">bNEO</option>
+                  <option value="rSWTH">rSWTH</option>
+                  <option value="wstETH">wstETH</option>
+                    <!-- Add more currencies as needed -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="toCurrency">To:</label>
+                <select id="toCurrency" name="toCurrency">
+                  <option value="ATOM">ATOM</option>
+                  <option value="BLUR">BLUR</option>
+                  <option value="BUSD">BUSD</option>
+                  <option value="ETH">ETH</option>
+                  <option value="EVMOS">EVMOS</option>
+                  <option value="GMX">GMX</option>
+                  <option value="IBCX">IBCX</option>
+                  <option value="IRIS">IRIS</option>
+                  <option value="KUJI">KUJI</option>
+                  <option value="LSI">LSI</option>
+                  <option value="LUNA">LUNA</option>
+                  <option value="OKB">OKB</option>
+                  <option value="OKT">OKT</option>
+                  <option value="OSMO">OSMO</option>
+                  <option value="RATOM">RATOM</option>
+                  <option value="STATOM">STATOM</option>
+                  <option value="STEVMOS">STEVMOS</option>
+                  <option value="STLUNA">STLUNA</option>
+                  <option value="STOSMO">STOSMO</option>
+                  <option value="STRD">STRD</option>
+                  <option value="SWTH">SWTH</option>
+                  <option value="USC">USC</option>
+                  <option value="USD">USD</option>
+                  <option value="USDC">USDC</option>
+                  <option value="WBTC">WBTC</option>
+                  <option value="YieldUSD">YieldUSD</option>
+                  <option value="ZIL">ZIL</option>
+                  <option value="ampLUNA">ampLUNA</option>
+                  <option value="axlUSDC">axlUSDC</option>
+                  <option value="bNEO">bNEO</option>
+                  <option value="rSWTH">rSWTH</option>
+                  <option value="wstETH">wstETH</option>
+                    <!-- Add more currencies as needed -->
+                </select>
+            </div>
+            <button type="button" onclick="swapCurrencies()">Swap</button>
+            <div id="conversionResult"></div>
+        </form>
+    </div>
+    
+    <script src="script.js"></script>
 </body>
-
 </html>
